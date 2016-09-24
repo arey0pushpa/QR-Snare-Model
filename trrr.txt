@@ -1,0 +1,1000 @@
+  997  agda
+  998  agda --version 
+  999  ls
+ 1000  .agda
+ 1001  cd ~/.agda
+ 1002  ls
+ 1003  cd agda
+ 1004  ;s
+ 1005  ls
+ 1006  agda --version
+ 1007  mkdir ~/.agda
+ 1008  ls
+ 1009  cd .agda
+ 1010  ls
+ 1011  vim libraries
+ 1012  vim defaults
+ 1013  cd agda-prelude/
+ 1014  cabal install
+ 1015  cd agda-ffi/
+ 1016  cabal install
+ 1017  cd
+ 1018  vim .emacs
+ 1019  p
+ 1020  y
+ 1021  r
+ 1022  t
+ 1023  f
+ 1024  d
+ 1025  s
+ 1026  a
+ 1027  f
+ 1028  g
+ 1029  vim demo1A.agda
+ 1030  agda-mode
+ 1031  agda-mode compile
+ 1032  g
+ 1033  ls
+ 1034  cd ORAGON/
+ 1035  ls
+ 1036  cd AGDA/
+ 1037  ls
+ 1038  cd sample-code/
+ 1039  ;s
+ 1040  ls
+ 1041  cd ..
+ 1042  ls
+ 1043  cd Examples-working/
+ 1044  ;s
+ 1045  ls
+ 1046  vim Intro.agda 
+ 1047  df -h
+ 1048  g
+ 1049  ks
+ 1050  ls
+ 1051  cd ncbs/friendZoned/
+ 1052  ls
+ 1053  cd
+ 1054  cd all-nonsense-asogohan/
+ 1055  ls
+ 1056  cd And/
+ 1057  ls
+ 1058  cd ..
+ 1059  ls
+ 1060  cd ..
+ 1061  cd modelling-cell-evolution/
+ 1062  ls
+ 1063  vim cellevolution.c 
+ 1064  cd
+ 1065  cd Desktop/eclipse/
+ 1066  ls
+ 1067  t
+ 1068  ls
+ 1069  sml
+ 1070  sml --version
+ 1071  cd Desktop/
+ 1072  ls
+ 1073  tar xzf tutch-0.52-for-sml-110.45.tar.gz 
+ 1074  ls
+ 1075  cd tutch-0.52/
+ 1076  ls
+ 1077  which build-ml
+ 1078  make
+ 1079  ln -s tutch-0.52 tutch
+ 1080  cd ..
+ 1081  ln -s tutch-0.52 tutch
+ 1082  cp -p tutch/bin/tutch ~/bin/
+ 1083  ls
+ 1084  tutch -v tutch/doc/examples/prop3
+ 1085  ls
+ 1086  ./tutch
+ 1087  cd tutch
+ 1088  ls
+ 1089  tune
+ 1090  tut
+ 1091  tutch
+ 1092  ./tutch
+ 1093  ls
+ 1094  tutch
+ 1095  ./tutch
+ 1096  /.tutch
+ 1097  cd ..
+ 1098  ls
+ 1099  cd tutch
+ 1100  cd ..
+ 1101  cd tutch-0.52/
+ 1102  ls
+ 1103  tune
+ 1104  tutch
+ 1105  ./tutch
+ 1106  make
+ 1107  sml
+ 1108  tutch
+ 1109  cp -p ~/Desktop/tutch/bin/tutch ~/bin
+ 1110  tutch 
+ 1111  cd 
+ 1112  cd Desktop/
+ 1113  ls
+ 1114  tar xzf tutch-0.52
+ 1115  ls
+ 1116  tar xzf tutch-0.52.tar.gz 
+ 1117  cd tutch-0.52/
+ 1118  ls
+ 1119  which sml-cm
+ 1120  sml-cm
+ 1121  sml
+ 1122  which build-ml
+ 1123  sudo apt-get install build-ml
+ 1124  sudo apt-get install sml-cm
+ 1125  cd..
+ 1126  ;s
+ 1127  cd .
+ 1128  cd ..
+ 1129  ;s
+ 1130  ls
+ 1131  cd tutch-0.52/
+ 1132  ls
+ 1133  make
+ 1134  cd ..
+ 1135  ls
+ 1136  tar xzf tutch-0.52.tar.gz 
+ 1137  ls
+ 1138  cd tutch-0.52/
+ 1139  ls
+ 1140  which built-ml
+ 1141  which sml-cm 
+ 1142  which sml-cn
+ 1143  cd /usr/local/SML/bin
+ 1144  cd
+ 1145  tutch 
+ 1146  ls
+ 1147  cd l
+ 1148  cd De
+ 1149  cd Desktop/
+ 1150  ls
+ 1151  tutch
+ 1152  cd tutch-0.52/
+ 1153  ls
+ 1154  which sml-cm
+ 1155  which sml-cn
+ 1156  which built-ml
+ 1157  make
+ 1158  cd .. 
+ 1159  ls
+ 1160  cd all-nonsense-asogohan/
+ 1161  ls
+ 1162  cd And/
+ 1163  ls
+ 1164  vim And
+ 1165  vim AndOrModel.c 
+ 1166  cp AndOrModel.c Working_And_Or_model_5:58:26May.c
+ 1167  vim Working_And_Or_model_5\:58\:26May.c 
+ 1168  cd ..
+ 1169  ls
+ 1170  git add --all
+ 1171  git commit "new ads"
+ 1172  git commit -m "new ads"
+ 1173  git push origin master 
+ 1174  vim Working_And_Or_model_5\:58\:26May.c 
+ 1175  cd And/
+ 1176  ls
+ 1177  vim Working_And_Or_model_5\:58\:26May.c 
+ 1178  w
+ 1179  cd
+ 1180  g
+ 1181  ls
+ 1182  cd nc 
+ 1183  cd 
+ 1184  cd try_haskell/
+ 1185  ls
+ 1186  cd eric-mier-course/
+ 1187  ls
+ 1188  cd chap4/
+ 1189  ls
+ 1190  vim fold.hs 
+ 1191  s
+ 1192  ls
+ 1193  vim signum.hs 
+ 1194  ghci 
+ 1195  cd all-nonsense-asogohan/
+ 1196  ls
+ 1197  cd And/
+ 1198  ks
+ 1199  ls
+ 1200  cd ..
+ 1201  git add --all
+ 1202  git commit -m "fcuk"
+ 1203  git push origin master
+ 1204  cs all
+ 1205  cd all-nonsense-asogohan/
+ 1206  cd And/
+ 1207  ls
+ 1208  cd
+ 1209  cd Desktop/
+ 1210  ls
+ 1211  vim graph-theoretic-properties\ \(2\).pdf 
+ 1212  vim usepage.txt
+ 1213  cd 
+ 1214  cd Desktop/
+ 1215  vim t
+ 1216  vim t.txt 
+ 1217  cd try_haskell/
+ 1218  ls
+ 1219  cd intro_to_fp-bird-wadler/
+ 1220  ls
+ 1221  mkdir chap2
+ 1222  cd chap
+ 1223  cd chap2/
+ 1224  ls
+ 1225  vim arith1.hs
+ 1226  ghci
+ 1227  history
+ 1228  ssh somya@asagohan
+ 1229  df -h
+ 1230  ghci 
+ 1231  scheme
+ 1232  which scheme
+ 1233  where scheme
+ 1234  cd /usr/bin 
+ 1235  ls -l
+ 1236  ls -l | grep scheme
+ 1237  find . -inum 619704
+ 1238  find . inum 20517
+ 1239  find . inum 20517cd 
+ 1240  cd 
+ 1241  cd .scheme
+ 1242  file scheme
+ 1243  file /scheme
+ 1244  file scheme
+ 1245  mit-scheme
+ 1246  cd mit-scheme
+ 1247  cd .mit-scheme
+ 1248  which mit-scheme
+ 1249  cd /usr/bin/mit-scheme
+ 1250  find mit-scheme
+ 1251  find mit-schemecd
+ 1252  cd 
+ 1253  git clone https://github.com/webyrd/miniKanren-with-symbolic-constraints.git
+ 1254  cd miniKanren-with-symbolic-constraints/
+ 1255  ks
+ 1256  ls
+ 1257  scheme
+ 1258  vicare-scheme
+ 1259  cd 
+ 1260  cd Downloads/vim-colors-solarized-master/
+ 1261  cd ..
+ 1262  cd vicare-scheme-0.3d7/
+ 1263  ls
+ 1264  ./configure
+ 1265  make
+ 1266  make check
+ 1267  ls
+ 1268  cp scheme /usr/bin/new-scheme
+ 1269  sudo cp scheme /usr/bin/new-scheme
+ 1270  cd scheme 
+ 1271  ls
+ 1272  cd ..
+ 1273  ls
+ 1274  scheme
+ 1275  git clone https://github.com/miniKanren/miniKanren.git
+ 1276  cd miniKanren
+ 1277  ks
+ 1278  ls
+ 1279  scheme
+ 1280  cd
+ 1281  git clone git://code.call-cc.org/chicken-core
+ 1282  cd chicken-core/
+ 1283  ks
+ 1284  ls
+ 1285  ./identify.sh 
+ 1286  sudo apt-get install
+ 1287  sudo apt-get install chicken 
+ 1288  cd 
+ 1289  git clone https://github.com/webyrd/miniKanren-uncourse.git
+ 1290  cd miniKanren-uncourse/
+ 1291  ls
+ 1292  cd mk-implementations/
+ 1293  ls
+ 1294  cd scheme/
+ 1295  ;s
+ 1296  ls
+ 1297  scheme
+ 1298  cd
+ 1299  cd Downloads/
+ 1300  tar -xzf pcsv8.4-a6osx-1.pkg.tar.gz 
+ 1301  unzip -xzf pcsv8.4-a6osx-1.pkg.tar.gz 
+ 1302  unzip pcsv8.4-a6osx-1.pkg.tar.gz 
+ 1303  cd pcsv8.4-a6osx-1.pkg/
+ 1304  ls
+ 1305  cd Contents/
+ 1306  ls
+ 1307  cd ..
+ 1308  configure
+ 1309  ./configure
+ 1310  cd
+ 1311  cd Downloads/
+ 1312  cd 
+ 1313  git clone https://github.com/miniKanren/miniKanren.git
+ 1314  cd miniKanren
+ 1315  ls
+ 1316  scheme
+ 1317  mit-scheme
+ 1318  cd
+ 1319  g
+ 1320  ls
+ 1321  cd PROGRAMMING\ LANGUAGE/LOGIC\ LANGUAGE/
+ 1322  ls
+ 1323  cd mininKanren/
+ 1324  youtube-dl  -F https://www.youtube.com/watch?v=K3QNJDalX1U
+ 1325  youtube-dl  -f 22 https://www.youtube.com/watch?v=K3QNJDalX1U
+ 1326  cd .racket/
+ 1327  ls
+ 1328  racket
+ 1329  cd 6.2/
+ 1330  ls
+ 1331  cd pkgs/
+ 1332  ls
+ 1333  git clone https://github.com/webyrd/faster-miniKanren.git
+ 1334  ls
+ 1335  cd faster-miniKanren/
+ 1336  ls
+ 1337  sudo apt-get install libncurses5-dev
+ 1338  ls
+ 1339  cd
+ 1340  git clone https://github.com/webyrd/faster-miniKanren.git
+ 1341  cd
+ 1342  git clone https://github.com/cisco/ChezScheme.git
+ 1343  cd ChezScheme/
+ 1344  ls
+ 1345  ./configure 
+ 1346  sudo make install
+ 1347  sheme
+ 1348  scheme
+ 1349  cd ..
+ 1350  sheme
+ 1351  scheme
+ 1352  q
+ 1353  g
+ 1354  cd PROGRAMMING\ LANGUAGE/LOGIC\ LANGUAGE/
+ 1355  cd mininKanren/
+ 1356  ls
+ 1357  youtube-dl -F https://www.youtube.com/watch?v=2WQgH-QEhVw
+ 1358  youtube-dl -f 22 https://www.youtube.com/watch?v=2WQgH-QEhVw
+ 1359  youtube-dl -F https://www.youtube.com/watch?v=2GfFlfToBCo
+ 1360  youtube-dl -fc 18 https://www.youtube.com/watch?v=2GfFlfToBCo
+ 1361  youtube-dl -c -f 18 https://www.youtube.com/watch?v=2GfFlfToBCo
+ 1362  g
+ 1363  cd PROGRAMMING\ LANGUAGE/LOGIC\ LANGUAGE/mininKanren/
+ 1364  ls
+ 1365  youtube-dl  -F https://www.youtube.com/watch?v=zhw_MSGL4wI
+ 1366  youtube-dl  -f 22  https://www.youtube.com/watch?v=zhw_MSGL4wI
+ 1367  scheme
+ 1368  ghci
+ 1369  g
+ 1370  cd PROGRAMMING\ LANGUAGE/FUNCTIONAL\ PROGRAMMING/
+ 1371  ls
+ 1372  cd FUNCTIONAL\ PROGRAMMING/HASKELL\ ERIC\ MEIJER/
+ 1373  ls
+ 1374  df -h
+ 1375  wget -c http://video.ch9.ms/ecn/ch9/1/1/2/4/0/5/C9LecturesMeijerC8_2MB_ch9.wmv
+ 1376  cd try_haskell/
+ 1377  ls
+ 1378  cd eric-mier-course/
+ 1379  ls
+ 1380  mkdir chap7
+ 1381  cd chap7/
+ 1382  ls
+ 1383  cd ..
+ 1384  ls
+ 1385  cd chap
+ 1386  cd chap7/
+ 1387  ls
+ 1388  vim lyhgg.hs
+ 1389  cd..
+ 1390  cd ..
+ 1391  ls
+ 1392  echo "# learn-haskell" >> README.md
+ 1393  git init
+ 1394  git add README.md
+ 1395  git remote add origin https://github.com/arey0pushpa/learn-haskell.git
+ 1396  git commit --all 
+ 1397  git add --all
+ 1398  git commit -m "Beginning learnig haskell Again"
+ 1399  git push origin master
+ 1400  ghci
+ 1401  ghc-mod
+ 1402  vim
+ 1403  ghc-mod version
+ 1404  cd try_haskell/eric-mier-course/chap7/
+ 1405  ls
+ 1406  vim lhfg.hs
+ 1407  cd ~/.vim/bundle/YouCompleteMe
+ 1408  ./install.py --clang-completer
+ 1409  ls
+ 1410  ./install.sh --clang-completer
+ 1411  cd ..
+ 1412  ls
+ 1413  gitcd YouCompleteMe/
+ 1414  cd YouCompleteMe/
+ 1415  ls
+ 1416  cd third_party/
+ 1417  ls
+ 1418  cd ..
+ 1419  d ..
+ 1420  cd ..
+ 1421  mv YouCompleteMe/ YouCompleteMe_Old/
+ 1422  git clone https://github.com/Valloric/YouCompleteMe.git
+ 1423  cd YouCompleteMe
+ 1424  ls
+ 1425  ./install.py --clang-completer
+ 1426  git submodule update --init --recursive
+ 1427  ./install.py --clang-completer
+ 1428  ./install.sh
+ 1429  ./install.py --clang-completer
+ 1430  install.py
+ 1431  ./install.py
+ 1432  cd ..
+ 1433  mv YouCompleteMe YouCompleteMe_new
+ 1434  mv YouCompleteMe_
+ 1435  mv YouCompleteMe_Old/ YouCompleteMe
+ 1436  cd YouCompleteMe
+ 1437  ./install.py
+ 1438  ./install.py --clang-completer
+ 1439  git submodule update --init --recursive
+ 1440  ./install.py --clang-completer
+ 1441  python install.py --all
+ 1442  python ./install.py --all
+ 1443  cd FStar/
+ 1444  ls
+ 1445  make -C src
+ 1446  ghci 
+ 1447  sudo apt-get install mono-complete fsharp
+ 1448  Z3
+ 1449  z3
+ 1450  f*
+ 1451  youtube-dl -F https://www.youtube.com/watch?v=lbMVYIdPvLA
+ 1452  youtube-dl -f 18 https://www.youtube.com/watch?v=lbMVYIdPvLA
+ 1453  scheme
+ 1454  git clone https://github.com/webyrd/miniKanren-uncourse.git
+ 1455  cd miniKanren-uncourse/mk-implementations/scheme/
+ 1456  cp pmatch.scm ~/
+ 1457  cd
+ 1458  vim pmatch.scm 
+ 1459  scheme
+ 1460  scheme 
+ 1461  scheme
+ 1462  (load "mk.scm")
+ 1463  scheme
+ 1464  mkdir try_agda
+ 1465  cd try_agda
+ 1466  ghci
+ 1467  cd try_haskell/
+ 1468  s
+ 1469  ls
+ 1470  cd eric-mier-course/
+ 1471  ls
+ 1472  cd chap7/
+ 1473  cd try_haskell/eric-mier-course/
+ 1474  cd ..
+ 1475  ls
+ 1476  mkdir advanced-haskell
+ 1477  cd advanced
+ 1478  ls
+ 1479  cd ..
+ 1480  cd advanced-haskell/
+ 1481  ls
+ 1482  sudo apt-get install calibre
+ 1483  calibre
+ 1484  ghci
+ 1485  mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+ 1486  vim ~/.vimrc
+ 1487  vim
+ 1488  cd try_haskell/
+ 1489  cd 48hours.hs/
+ 1490  ls
+ 1491  vim datatypeparser.hs
+ 1492  lsghc -package parsec -o data-parser datatypeparser.hs
+ 1493  ghc -package parsec -o data-parser datatypeparser.hs
+ 1494  ./data-parser 23
+ 1495  vim
+ 1496  vim basic.hs
+ 1497  ghc -o basic basic.hs
+ 1498  ./basic 
+ 1499  ./basic Noel
+ 1500  ./basic "Noel"
+ 1501  ./basic Simon
+ 1502  ghc -o basic basic.hs
+ 1503  ./basic John
+ 1504  ./basic "John"
+ 1505  ghc -o basic basic.hs
+ 1506  ./basic "John"
+ 1507  ghc -o basic basic.hs
+ 1508  ./basic "John"
+ 1509  ./basic John
+ 1510  cd try_haskell/48hours.hs/
+ 1511  vim basic.hs
+ 1512  cabal delete ghc-mod
+ 1513  cabal --help
+ 1514  cabal remove ghc-mod
+ 1515  ghc-pkg unregister --force ghc-mod
+ 1516  cabal update
+ 1517  vim
+ 1518  cd ~/.vim/bundle/YouCompleteMe
+ 1519  ./install.py --all
+ 1520  sudo apt-get install install python-devel
+ 1521  sudo apt-get install python-devel
+ 1522  sudo apt-get install python2.7-dev
+ 1523  ./install.py --all
+ 1524  cd ..
+ 1525  ls
+ 1526  cd ~/.vim/bundle && git clone --depth=1 https://github.com/scrooloose/syntastic.git
+ 1527  mkdir ~/.vim/autoload
+ 1528  cd ~/.vim/bundle
+ 1529  ls
+ 1530  vim ~/.vimrc
+ 1531  cabal install hdevtools
+ 1532  vim ~/.vimrc
+ 1533  cd try_haskell/48hours.hs/
+ 1534  ls
+ 1535  vim basic.hs
+ 1536  cd ~/.vim/bundle/YouCompleteMe
+ 1537  ./install.py --clang-completer
+ 1538  cd ~/.vim/bundle/YouCompleteMe
+ 1539  ./install.py
+ 1540  ls
+ 1541  cd ..
+ 1542  ls
+ 1543  rm -r YouCompleteMe
+ 1544  sudo rm -r YouCompleteMe
+ 1545  sudo rm -r YouCompleteMe_new/
+ 1546  git clone https://github.com/Valloric/YouCompleteMe.git
+ 1547  l[=; ; ; ; ; ; ; ; ; ; ; 
+ 1548  cd ~/.vim/bundle/YouCompleteMe
+ 1549  ./install.py --clang-completer --system-libclang --system-boost
+ 1550  git submodule update --init --recursive
+ 1551  cd ~/.vim/bundle && git clone --depth=1 https://github.com/scrooloose/syntastic.git
+ 1552  vim
+ 1553  cd ~/.vim/bundle/YouCompleteMe
+ 1554  ./install.py --clang-completer --system-libclang --system-boost
+ 1555  cd ~/.vim/bundle/YouCompleteMe
+ 1556  ./install.py --system-boost
+ 1557  ./install.py 
+ 1558  vim
+ 1559  cd try_haskell/48hours.hs/
+ 1560  ls
+ 1561  vim basic
+ 1562  vim basic.hs
+ 1563  vim datatypeparser.hs
+ 1564  ghc-mod root
+ 1565  ls
+ 1566  vim datatypeparser.h
+ 1567  vim datatypeparser.hs
+ 1568  vim 
+ 1569  ghc -package parsec -o data-parser datatypeparser.hs
+ 1570  ./data-parser "basic"
+ 1571  ./data-parser "bas""ic"
+ 1572  ./data-parser "bas "" ic"
+ 1573  ./data-parser "bas \"" ic"
+ 1574  ./data-parser "bas\" \"ic"
+ 1575  ./data-parser "()"
+ 1576  vim basic.hs
+ 1577  ghc -o basic basic.hs
+ 1578  ./basic  Noel
+ 1579  ./basic  "Noel"
+ 1580  ./basic  Noel
+ 1581  ghc -o basic basic.hs
+ 1582  ./basic  Noel
+ 1583  git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/vimproc.vim
+ 1584  cd ~/.vim/bundle/vimproc.vim
+ 1585  make
+ 1586  cd ~/.vim/bundle/vimproc.vim
+ 1587  make
+ 1588  ls
+ 1589  make
+ 1590  make -f make_unix.mak
+ 1591  build
+ 1592  ls
+ 1593  Makefile
+ 1594  make
+ 1595  cd ..
+ 1596  ls
+ 1597  cd vimproc.vim/
+ 1598  ls
+ 1599  make
+ 1600  cd autoload/
+ 1601  ls
+ 1602  cd ..
+ 1603  ;s
+ 1604  ls
+ 1605  cd tools/
+ 1606  ls
+ 1607  cd ..
+ 1608  ls
+ 1609  cd ..
+ 1610  ls
+ 1611  curl -fLo ~/.vim/autoload/plug.vim --create-dirs     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ 1612  ls
+ 1613  vim ~/.vimrc 
+ 1614  cd ..
+ 1615  ls
+ 1616  cd bundle/
+ 1617  ls
+ 1618  cd vimproc.vim/
+ 1619  s
+ 1620  ls
+ 1621  make
+ 1622  cd try_haskell/48hours.hs/
+ 1623  vim datatypeparser.hs
+ 1624  cd /media/mokambo/Lao\ Tzu1
+ 1625  cd Compre-Viva\ Presentation/
+ 1626  ls
+ 1627  cd try_cbmc/
+ 1628  ls
+ 1629  mkdir cbmc-examples
+ 1630  cd cbmc-examples/
+ 1631  echo "# cbmc-examples" >> README.md
+ 1632  git init
+ 1633  git add README.md
+ 1634  git commit -m "first commit"
+ 1635  git remote add origin https://github.com/arey0pushpa/cbmc-examples.git
+ 1636  git push -u origin master
+ 1637  ls
+ 1638  vim ex1.c
+ 1639  cbcm --help
+ 1640  cbmc --help
+ 1641  cd cbmc-examples/
+ 1642  ls
+ 1643  cbmc ex1.c
+ 1644  cbmc ex2.c
+ 1645  cbmc ex1.c --dimacs --outfile foo
+ 1646  cbmc ex2.c --dimacs --outfile bar
+ 1647  cbmc --help
+ 1648  cd try_cbmc/
+ 1649  ls
+ 1650  cd cbmc-examples/
+ 1651  ls
+ 1652  cbmc file1.c 
+ 1653  ls
+ 1654  cbmc ex1.c
+ 1655  cbmc ex1.c --show-vcc
+ 1656  cbmc --help
+ 1657  cbmc ex1.c --show-v
+ 1658  cbmc ex2.c
+ 1659  cbmc ex2.c --show-vcc
+ 1660  cbmc ex3.c 
+ 1661  cbmc ex3.c --show-vcc
+ 1662  cbmc ex3.c --no-assertions
+ 1663  cbmc ex3.c --no-assertions --show-vcc
+ 1664  cbmc ex3.c --signed-overflow-check
+ 1665  cbmc file1.c 
+ 1666  goto-cc ex3.c -o ex3.gb
+ 1667  cbmc --help
+ 1668  goto-instrument --signed-overflow-check ex3.gb ex3.instr.gb
+ 1669  cat ex3.gb
+ 1670  ls
+ 1671  cbmc ex3.instr.gb 
+ 1672  cbmc ex3.c --signed-overflow-check --show-properties
+ 1673  cat ex3.instr.gb 
+ 1674  cbmc ex3.c --signed-overflow-check
+ 1675  cbmc ex3.c --signed-overflow-check --show-goto-functions
+ 1676  cbmc ex4.c
+ 1677  cbmc ex4.c --functions fun
+ 1678  cbmc ex4.c --function fun
+ 1679  cbmc ex4.c --function fun --div-by-zero-check
+ 1680  cbmc ex5.c
+ 1681  cbmc --help
+ 1682  cbmc ex1.c  --beautify 
+ 1683  cbmc ex2.c  --beautify 
+ 1684  cbmc --help
+ 1685  cbmc ex2.c  --dimacs foo
+ 1686  cbmc ex2.c  --dimacs foo.cnf
+ 1687  touch foo
+ 1688  cbmc ex2.c  --dimacs foo
+ 1689  cbmc ex2.c  --dimacs --outfile foo
+ 1690  cat foo
+ 1691  ./cryptominisat4_simple --verb=4  CNF
+ 1692  ls
+ 1693  git clone https://github.com/msoos/cryptominisat.git
+ 1694  ls
+ 1695  cd ..
+ 1696  ls
+ 1697  git clone https://github.com/msoos/cryptominisat.git
+ 1698  cd cryptominisat/
+ 1699  ls
+ 1700  mkdir build
+ 1701  cd build/
+ 1702  cmake ..
+ 1703  make -j4
+ 1704  sudo make install
+ 1705  sudo ldconfig
+ 1706  cd ..
+ 1707  ./cryptominisat4_simple --verb=4  CNF
+ 1708  cd build/
+ 1709  ./cryptominisat5_simple 
+ 1710  ./cryptominisat4_simple --verb=4  ../../cbmc-examples/foo
+ 1711  ./cryptominisat4_simple --verb=4  ../../cbmc-examples/foo 
+ 1712  ./cryptominisat4_simple 
+ 1713  ./cryptominisat5_simple --verb=4  ../../cbmc-examples/foo 
+ 1714  cbmc ex1.c  --dimacs --outfile foo
+ 1715  ./cryptominisat5_simple --verb=4  ../../cbmc-examples/foo 
+ 1716  ./cryptominisat5_simple --verb=4  ../../cbmc-examples/bar 
+ 1717  ./cryptominisat5_simple --verb=4  ../../cbmc-examples/foo 
+ 1718  ./cryptominisat5_simple --verb=4  ../../cbmc-examples/bar 
+ 1719  cd try_cbmc/
+ 1720  ls
+ 1721  cd thattai/
+ 1722  ls
+ 1723  cd ..
+ 1724  ls
+ 1725  cbmc-examples/
+ 1726  ls
+ 1727  lscd working/
+ 1728  ls
+ 1729  cd working/
+ 1730  ls
+ 1731  cd ..
+ 1732  cd /media/mokambo/Lao\ Tzu1/IMSC\ Talk/
+ 1733  git add --all
+ 1734  git commit -m "better version"
+ 1735  git push origin master
+ 1736  mkdir imsc
+ 1737  cd imsc/
+ 1738  ls
+ 1739  vim ex1.c
+ 1740  cbmc ex1.c 
+ 1741  cbmc ex1.c --show-vcc
+ 1742  cbmc ex1.c  --dimacs --outfile foo
+ 1743  cbmc foo
+ 1744  cbmc ex1.c  --dimacs --outfile foo.cnf
+ 1745  cbmc foo.cnf
+ 1746  cbmc --help
+ 1747  ./cryptominisat4_simple --verb=4  foo
+ 1748  ls
+ 1749  vim ex1.c 
+ 1750  mv ex1.c file1.c
+ 1751  vim file2.c 
+ 1752  cbmc ex1.c 
+ 1753  cbmc file2.c 
+ 1754  cbmc file2.c --show-vcc
+ 1755  cbmc help
+ 1756  cbmc --help
+ 1757  cbmc file2.c --dimacs --outfile foo
+ 1758  cbmc --outfile foo
+ 1759  cbmc  foo
+ 1760  vim foo
+ 1761  goto-cc file2.c -o ex3.gb
+ 1762  goto-instrument --signed-overflow-check ex3.gb
+ 1763  goto-instrument --signed-overflow-check file2.gb
+ 1764  goto-cc file2.c -o ex3.gb
+ 1765  goto-instrument --signed-overflow-check ex3.gb
+ 1766  ex3.instr.gbgoto-instrument --signed-overflow-check ex3.gb
+ 1767  goto-cc file2.c -o file2.gb
+ 1768  file2.instr.gbgoto-instrument --signed-overflow-check file2.gb
+ 1769  goto-instrument --signed-overflow-check file2.gb
+ 1770  goto-instrument --signed-overflow-check file2.gb file2.instr.gb
+ 1771  cbmc file2.instr.gb 
+ 1772  goto-cc file2.c -o file2.gb
+ 1773  vim file2.GB
+ 1774  vim file2.gb 
+ 1775  cbmc --help
+ 1776  cbmc file2.c ==program-only
+ 1777  cbmc file2.c --program-only
+ 1778  cbmc file2.c --show-vcc
+ 1779  goto-cc file2.c -o file2.gb
+ 1780  goto-instrument --signed-overflow-check file2.gb file2.instr.gb
+ 1781  cbmc file2.instr.gb 
+ 1782  cd ..
+ 1783  cd try_cbmc 
+ 1784  ls
+ 1785  cd cbmc-examples/
+ 1786  ls
+ 1787  vim ex1.c
+ 1788  ../cryptominisat/cryptominisat5_simple --verb=4   foo
+ 1789  ../cryptominisat/build/cryptominisat5_simple --verb=4   foo
+ 1790  ls
+ 1791  cd /media/mokambo/Pablo\ Naruda/ncbs/friendZoned/Last\ Saved\ /
+ 1792  ls
+ 1793  vim functionArb119.c 
+ 1794  cd /media/mokambo/Lao\ Tzu1/IMSC\ Talk/
+ 1795  git add --all
+ 1796  git commit -m "Latest Version"
+ 1797  git push origin master
+ 1798  cd try_cbmc/
+ 1799  ls
+ 1800  cd basics/
+ 1801  ;s
+ 1802  ls
+ 1803  cd ..
+ 1804  ls
+ 1805  cd cbmc-examples/
+ 1806  ;s
+ 1807  ls
+ 1808  cd ..
+ 1809  cd cbmc-examples/
+ 1810  ls
+ 1811  vim work.c 
+ 1812  mv work.c color.c
+ 1813  ls
+ 1814  vim ex1.c
+ 1815  vim file1.c
+ 1816  ls
+ 1817  cd ..
+ 1818  ls
+ 1819  cd
+ 1820  cd /media/mokambo/Lao\ Tzu1/IMSC\ Talk/
+ 1821  git add --all
+ 1822  git commit -m "Latest Version"
+ 1823  git push origin master
+ 1824  cbmc work.c 
+ 1825  cbmc file2.c --program-only
+ 1826  ls
+ 1827  cbmc file1.c --program-only
+ 1828  cbmc --help
+ 1829  cbmc file1.c --show-properties
+ 1830  cbmc file1.c --no-pretty-names
+ 1831  cbmc file1.c
+ 1832  cbmc --help
+ 1833  cbmc file1.c --beautify
+ 1834  cd /media/mokambo/Lao\ Tzu1/
+ 1835  ls
+ 1836  cd try_cb
+ 1837  cd 
+ 1838  cd try_cbmc/cbmc-examples/
+ 1839  ls
+ 1840  vim color.c 
+ 1841  ls
+ 1842  cd try_cbmc/
+ 1843  ls
+ 1844  cd cbmc-examples/
+ 1845  ls
+ 1846  ../cryptominisat/cryptominisat5_simple --verb=4   foo\\\\\\\\\\\\\\
+ 1847  ../cryptominisat/cryptominisat5_simple --verb=4   foo
+ 1848  LS
+ 1849  l
+ 1850  vim ex1.c
+ 1851  vim file1.c
+ 1852  cbmc file1.c
+ 1853  cbmc --help
+ 1854  cbmc file1.c --beautify
+ 1855  vim color.c 
+ 1856  cd try_cbmc/
+ 1857  ls
+ 1858  cd cbmc-examples/
+ 1859  ls
+ 1860  vim ex1.c
+ 1861  cbmc file1.c --bounds-check --trace
+ 1862  cbmc ex1.c --bounds-check --trace
+ 1863  cbmc file1.c  
+ 1864  cbmc file1.c  --trace
+ 1865  cbmc ex4.c --function fun
+ 1866  cbmc ex4.c --function fun --div-by-zero-check
+ 1867  cd try_cbmc
+ 1868  ls
+ 1869  cd cbmc-examples/
+ 1870  ls
+ 1871  vim ex1.c
+ 1872  vim ex3
+ 1873  vim ex3.c
+ 1874  vim ex4.c
+ 1875  mv ~/.vimrc ~/.oldd-vimrc
+ 1876  cd try_haskell/
+ 1877  ;s
+ 1878  l
+ 1879  mkdir liquid-haskell
+ 1880  cd liquid-haskell/
+ 1881  vim file1.hs
+ 1882  nanao file1.hs .hs
+ 1883  nanao file1.hs 
+ 1884  nano file1.hs 
+ 1885  vim file1.hs 
+ 1886  cd try_haskell/liquid-haskell/
+ 1887  ls
+ 1888  vim file1.hs 
+ 1889  ghci file1.hs 
+ 1890  z3
+ 1891  z3 --version
+ 1892  cd /media/mokambo/Lao\ Tzu1/JIHAD/THIS_SEM\(\)/TOPICS\ IN\ PROG\ ANALYSIS/
+ 1893  ls
+ 1894  cd PRESENTATION/Z_PREV_PRESENTATION/gangster-master/
+ 1895  ls
+ 1896  git remote add origin https://github.com/arey0pushpa/Dependent-types-ML0-Pi.git
+ 1897  git ls -a
+ 1898  git remote add origin https://github.com/arey0pushpa/Dependent-types-ML0-Pi.git
+ 1899  rm .git
+ 1900  rm -r .git
+ 1901  git init
+ 1902  git remote add origin https://github.com/arey0pushpa/Dependent-types-ML0-Pi.git
+ 1903  git add --all
+ 1904  git commit -m "first Commit"
+ 1905  git push -u origin master
+ 1906  git add --all
+ 1907  git commit -m "Second Commit"
+ 1908  git push -u origin master
+ 1909  git add --all
+ 1910  git commit -m "Second Commit"
+ 1911  git push -u origin master
+ 1912  vim README
+ 1913  vim README.md 
+ 1914  git add --all
+ 1915  git commit -m "Second Commit"
+ 1916  git push -u origin master
+ 1917  vim README.md 
+ 1918  git add --all
+ 1919  git commit -m "Second Commit"
+ 1920  git push -u origin master
+ 1921  git add --all
+ 1922  git commit -m "Second Commit"
+ 1923  git push -u origin master
+ 1924  vim README.md 
+ 1925  git add --all
+ 1926  git commit -m "Second Commit"
+ 1927  git push -u origin master
+ 1928  git commit -m "Second Commit"
+ 1929  git push -u origin master
+ 1930  git commit -m "Second Commit"
+ 1931  git push -u origin master
+ 1932  vim README.md
+ 1933  cd try_cbmc 
+ 1934  ls
+ 1935  mkdir swamy
+ 1936  cd swamy/
+ 1937  s
+ 1938  ls
+ 1939  vim file1.c
+ 1940  ls
+ 1941  cd ..
+ 1942  ls
+ 1943  cd thattai/cell-working/
+ 1944  cd ..
+ 1945  ls
+ 1946  cd
+ 1947  cd /media/mokambo/Pablo\ Naruda/projects/ncbsProjects/Fulltraffic/
+ 1948  ls
+ 1949  cd ..
+ 1950  ls
+ 1951  cd Color/friendZoned/
+ 1952  ls
+ 1953  mkdir swamy
+ 1954  ls
+ 1955  cd 4602818/
+ 1956  ls
+ 1957  cd ..
+ 1958  ls
+ 1959  cd friendZoned/
+ 1960  ls
+ 1961  cd swamy/
+ 1962  ls
+ 1963  vim file1.c
+ 1964  git init
+ 1965  git add --all
+ 1966  git commit -m "First commit"
+ 1967  git remote add origin https://github.com/arey0pushpa/neural-bs.git
+ 1968  git push origin masters
+ 1969  git push origin master
+ 1970  cd /media/mokambo/Lao\ Tzu1/Dependent-types-ML0-Pi-master/
+ 1971  ls
+ 1972  git add --all 
+ 1973  git init
+ 1974  git remote add origin https://github.com/arey0pushpa/Dependent-types-ML0-Pi.git
+ 1975  git add --all 
+ 1976  git commit -m "First commit"
+ 1977  rm -rf .git
+ 1978  git init
+ 1979  history
+ 1980  git remote add origin https://github.com/arey0pushpa/Dependent-types-ML0-Pi.git
+ 1981  git add --all
+ 1982  git commit -m "Last commit"
+ 1983  git push origin master
+ 1984  git pull
+ 1985  git add --all
+ 1986  git commit -m "Last commit"
+ 1987  cd 
+ 1988  cd /media/mokambo/Pablo\ Naruda/ncbs/friendZoned/
+ 1989  ls
+ 1990  cp AndOrwithOnoff.c And_Onn_off_21Sept_16.c
+ 1991  cd Added\ three\ Model/
+ 1992  ls
+ 1993  vim 1.c 
+ 1994  vim 2.c 
+ 1995  history
+ 1996  history > trrr.txt

@@ -96,6 +96,15 @@ int  main()
 
      __CPROVER_assume(edgeCount == len);
 
+     // Basic contraint on the qr and rq matrix
+     // Writing worst possible code 
+     for ( i = 0; i < snareLength; i++){
+	 for (j = 0; j < snareLength; j++) {
+		     if ( k =
+		     // State that the graph[i][j] = graph[j][i]
+		     if ((qrfusionMatrix[i] & (1 << (M - i)) ==  
+				     }
+				     }
        
 
     //  Define the Container as Basis of our work  --------------------------

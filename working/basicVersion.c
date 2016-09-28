@@ -12,7 +12,7 @@
 #define snareLength 4
 #define dLen 8  // 2 * M  
 #define bigLen 256 // 2 ^ (2*M) 
-#define len 4
+#define len 2
 
 
 _Bool nondet_bool();
@@ -35,6 +35,13 @@ unsigned int zeroTon(unsigned int n) {
     __CPROVER_assume(result >=0 && result <=n);
     return result ;
 };
+
+bigvector nondetBV() {
+	     bigvector bee;
+	     __CPROVER_assume(bee >= 0b0 && bee <= 0b1111);  
+	     return bee;  }
+	       //
+
 
 struct EdgeBag
  {
@@ -63,13 +70,14 @@ int  main()
     unsigned int connectedArray[N] = {}, edgeCount = 0;
     _Bool Ck=0, Cl = 0,Cf = 1, C0, C1, C2 = 1, C3 = 1, C4, C5, C6 , C7; 
 
+
     bigvector b1 = 0b1, b0 = 0b0, vf, vff, edegeInhib[dLen], nodeInhib[dLen];
     dvector bv ,bvv;
     bitvector Vnodes[N];
     bitvector Tnodes[N] ;
 
     bitvector  fareTotal, inTotal, outTotal , outVSnareTotal , inVSnareTotal , outTSnareTotal , inTSnareTotal ;
-    snareVector total, cond2Total, cond2fareTotal, centTotal, centTotal2, placeHolder, v, vl, vl2, t, f,g, v2, lastv, lastv2 ,nv, nv2, v0, v02 ;
+    snareVector total, cond2Total, cond2fareTotal, centTotal, centTotal2, placeHolder, v, vl, vl2, t, f, h, v2, lastv, lastv2 ,nv, nv2, v0, v02 ;
     snareVector Tedge[N][N], Vedge[N][N] , Vedge2[N][N] , Tedge2[N][N] , fComp , bComp;    
     snareVector qrfusionMatrix[snareLength];     
     snareVector rqfusionMatrix[snareLength];
@@ -294,12 +302,12 @@ int  main()
     C3 = 1;
 
     for  (i = 0; i < len; i++) {
-        centTotal = 0b0;
-        centTotal2 = 0b0;
-
-        total = 0b0;
-        ticks = 0;
-        ticks2 = 0;
+        edgeBag[i].combinedMask = 0b0; 
+        edgeBag[i].combinedMask2 = 0b0; 
+        
+	total = 0b0;
+        edgeBag[i].count = 0;
+        edgeBag[i].count2 = 0;
         Ck = 0;
         Cl = 0;
         v = edgeBag[i].vSnare;
@@ -312,8 +320,8 @@ int  main()
       // For each of the vsnares presentc on the edge you ahve t do 
         for  (j = 0; j < snareLength; j++) {   
            f = qrfusionMatrix[j];
-           g = rqfusionMatrix[j];   
-           vf = edegeInhib[j];
+           h = rqfusionMatrix[j];   
+           vf = edegeInhib[j + M];
             
           // GSNARE TIME :	
            // bv represents the current edges configuration
@@ -323,8 +331,8 @@ int  main()
            if ( (v & (1 << j)) && ((vf & (b1 << bv)) != b0) ) {    // Molecule is present
               	// THIS IS OR MODEL      
               //edgeBag[i].zebra[ticks] = f;  // edgebag now contain the required tsnares on edge for fusion. 
-              centTotal = centTotal | f;
-              ticks = ticks + 1;    
+              edgeBag[i].combinedMask = edgeBag[i].combinedMask | f;
+              edgeBag[i].count = edgeBag[i].count + 1;    
 	     // check the Fusion possibility of the vasnere to the target t snares on the edge : 
 	     /*Check following thing 
 	      * 1. Whether the molecules tsnares are active or not are active or not 
@@ -336,7 +344,7 @@ int  main()
               placeHolder = (Tnodes[valj] & f);
 	      for ( l = 0; l < snareLength; l++) {
 	          if  ( placeHolder & (1 << l)) { 
-		       vff  =  nodeInhib[l];   
+		       vff  =  nodeInhib[l + M];   
 	      // Tnoddes and f will tell us  that which r snare required for the fusion ? and then we'll check the 
              // Check for each of the Tsnares whetehr they are on or off stage :)
                        if ((vff  & (b1 << bvv)) != b0) {
@@ -346,10 +354,7 @@ int  main()
                 }
 	 }
 
-         edgeBag[i].combinedMask = centTotal;
-         edgeBag[i].count = ticks;
- 
-         vf = edegeInhib[j+M];
+         vf = edegeInhib[j];
 
 // R SNARE TIME : 
 // Build the Cl to get whethere the fusion is possible from the R snares present on the edges
@@ -358,8 +363,8 @@ int  main()
            if ( (t & (1 << j)) && ((vf & (b1 << bv)) != b0) ) {    // Molecule is present
               	// THIS IS OR MODEL      
               //edgeBag[i].zebra[ticks] = f;  // edgebag now contain the required tsnares on edge for fusion. 
-              centTotal2 = centTotal2 | g;
-              ticks2 = ticks2 + 1;    
+              edgeBag[i].combinedMask2 = edgeBag[i].combinedMask2 | h;
+              edgeBag[i].count2 = edgeBag[i].count2 + 1;    
 	     // check the Fusion possibility of the vasnere to the target t snares on the edge : 
 	     /*Check following thing 
 	      * 1. Whether the molecules tsnares are active or not are active or not 
@@ -368,10 +373,10 @@ int  main()
              // Check Inhibition of the molecule on the target compartment @Node 
          // bvv represents the target nodes configuration
           bvv = ((Vnodes[valj] << M) | Tnodes[valj]);
-          placeHolder = (Tnodes[valj] & g);
+          placeHolder = (Tnodes[valj] & h);
 	      for ( l = 0; l < snareLength; l++) {
 	           if  ( placeHolder & (1 << l)) { 
-		        vff  =  nodeInhib[l+M];   
+		        vff  =  nodeInhib[l];   
 	      // Tnoddes and f will tell us  that which r snare required for the fusion ? and then we'll check the 
              // Check for each of the Tsnares whetehr they are on or off stage :)
                         if ((vff  & (b1 << bvv)) != b0) {
@@ -381,9 +386,6 @@ int  main()
                }
 	 }
 
-
-         edgeBag[i].combinedMask2 = centTotal2;
-         edgeBag[i].count2 = ticks2;
 
          if(Ck == 1 || Cl == 1) {
              C2 = C2 && 1;
@@ -407,7 +409,7 @@ int  main()
 			 
 		       if (Tnodes[k] & (1 << m)) {   // Moleule is presnt on the node
                        // make sure its off / Inhibited 
-		          vf = nodeInhib[m];
+		          vf = nodeInhib[m + M];
 			  if (vf & (b1 << bv)) {  
 			       C3 = 0;
 	                   }
@@ -421,7 +423,7 @@ int  main()
 			 
 		       if (Vnodes[k] & (1 << m)) {   // Moleule is presnt on the node
                        // make sure its off / Inhibited 
-		          vf = nodeInhib[m+M];
+		          vf = nodeInhib[m];
 			  if (vf & (b1 << bv)) {  
 			       C3 = 0;
 	                   }
@@ -429,10 +431,9 @@ int  main()
                    }
                }
 	    }
+	    }
          }  // COMPLETED the Fusion Rule 2 
         
-       	} 
-     }
  }
      
     

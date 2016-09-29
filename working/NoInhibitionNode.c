@@ -12,7 +12,7 @@
 #define snareLength 4
 #define dLen 8  // 2 * M  
 #define bigLen 256 // 2 ^ (2*M) 
-#define len 4
+#define len 2
 
 
 _Bool nondet_bool();
@@ -36,6 +36,15 @@ unsigned int zeroTon(unsigned int n) {
     return result ;
 };
 
+bigvector nondetBV() {
+	     bigvector bee;
+	          __CPROVER_assume(bee >= 0b0 && bee <= 0b1111);  
+	               return bee;
+	               }
+	       //
+	       
+
+
 struct EdgeBag
  {
    unsigned int ith;
@@ -43,8 +52,6 @@ struct EdgeBag
    unsigned int count;
    unsigned int count2;
    bitvector edgeWeight;
-   //snareVector zebra[snareLength];
-   //snareVector zebra2[snareLength];
    snareVector  vSnare;
    snareVector tSnare;
    snareVector combinedMask; 
@@ -69,7 +76,7 @@ int  main()
     bitvector Tnodes[N] ;
 
     bitvector  fareTotal, inTotal, outTotal , outVSnareTotal , inVSnareTotal , outTSnareTotal , inTSnareTotal ;
-    snareVector total, cond2Total, cond2fareTotal, centTotal, centTotal2, placeHolder, v, vl, vl2, t, f,g, v2, lastv, lastv2 ,nv, nv2, v0, v02 ;
+    snareVector total, cond2Total, cond2fareTotal, centTotal, centTotal2, placeHolder, v, vl, vl2, t, f, h, v2, lastv, lastv2 ,nv, nv2, v0, v02 ;
     snareVector Tedge[N][N], Vedge[N][N] , Vedge2[N][N] , Tedge2[N][N] , fComp , bComp;    
     snareVector qrfusionMatrix[snareLength];     
     snareVector rqfusionMatrix[snareLength];
@@ -294,13 +301,14 @@ int  main()
     C3 = 1;
 
     for  (i = 0; i < len; i++) {
-        centTotal = 0b0;
-        centTotal2 = 0b0;
+        edgeBag[i].combinedMask = 0b0;
+        edgeBag[i].combinedMask2 = 0b0;
 
         total = 0b0;
-        ticks = 0;
-        ticks2 = 0;
-        Ck = 0;
+        
+	edgeBag[i].count = 0 ;
+	edgeBag[i].count2 = 0;
+	Ck = 0;
         Cl = 0;
         v = edgeBag[i].vSnare;
         t = edgeBag[i].tSnare;
@@ -312,8 +320,8 @@ int  main()
       // For each of the vsnares presentc on the edge you have to do 
         for  (j = 0; j < snareLength; j++) {   
            f = qrfusionMatrix[j];
-           g = rqfusionMatrix[j];   
-           vf = edegeInhib[j];
+           h = rqfusionMatrix[j];   
+           vf = edegeInhib[j + M];
             
           // GSNARE TIME :	
            // bv represents the current edges configuration
@@ -323,8 +331,8 @@ int  main()
            if ( (v & (1 << j)) && ((vf & (b1 << bv)) != b0) ) {    // Molecule is present
               	// THIS IS OR MODEL      
               //edgeBag[i].zebra[ticks] = f;  // edgebag now contain the required tsnares on edge for fusion. 
-              centTotal = centTotal | f;
-              ticks = ticks + 1;    
+            edgeBag[i].combinedMask = edgeBag[i].combinedMask | f;  
+           edgeBag[i].count = edgeBag[i].count + 1; 
 	     // check the Fusion possibility of the vasnere to the target t snares on the edge : 
 	     /*Check following thing 
 	      * 1. Whether the molecules tsnares are active or not are active or not 
@@ -338,10 +346,8 @@ int  main()
                          }
               }
 
-         edgeBag[i].combinedMask = centTotal;
-         edgeBag[i].count = ticks;
  
-         vf = edegeInhib[j+M];
+         vf = edegeInhib[j];
 
 // R SNARE TIME : 
 // Build the Cl to get whethere the fusion is possible from the R snares present on the edges
@@ -350,8 +356,9 @@ int  main()
            if ( (t & (1 << j)) && ((vf & (b1 << bv)) != b0) ) {    // Molecule is present
               	// THIS IS OR MODEL      
               //edgeBag[i].zebra[ticks] = f;  // edgebag now contain the required tsnares on edge for fusion. 
-              centTotal2 = centTotal2 | g;
-              ticks2 = ticks2 + 1;    
+                edgeBag[i].combinedMask2 = edgeBag[i].combinedMask2 | h;
+		   edgeBag[i].count2 = edgeBag[i].count2 + 1;
+	
 	     // check the Fusion possibility of the vasnere to the target t snares on the edge : 
 	     /*Check following thing 
 	      * 1. Whether the molecules tsnares are active or not are active or not 
@@ -360,13 +367,11 @@ int  main()
              // Check Inhibition of the molecule on the target compartment @Node 
          // bvv represents the target nodes configuration
           bvv = ((Vnodes[valj] << M) | Tnodes[valj]);
-          if (Tnodes[valj] & g) {
+          if (Tnodes[valj] & h) {
 		  Cl = 1;
                }
 	   }
 
-         edgeBag[i].combinedMask2 = centTotal2;
-         edgeBag[i].count2 = ticks2;
 
          if(Ck == 1 || Cl == 1) {
              C2 = C2 && 1;
@@ -381,16 +386,13 @@ int  main()
 	    if( k != edgeBag[i].jth) {              
             // FOR THE VSNARES CAUSING THE FUSION :
 		       // Chck if the which molecule at combined mask is present there 
-	           if ((edgeBag[i].combinedMask & Tnodes[k] )  && (edgeBag[i].combinedMask2 & Vnodes[k] )) {
-			       C3 = C3 && 1;
-	           }
-		   else {
-			   C3 = 0;
-                      }
-                   }
+	           if ((edgeBag[i].combinedMask & Tnodes[k] )  || (edgeBag[i].combinedMask2 & Vnodes[k] )) {
+			      C3 = 0;                    
+              }
           }
       } 
  }
+}
      
     
 /*

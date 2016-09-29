@@ -2,22 +2,21 @@
    Github Link
 */
 
+// --------------------------------------- TESTED ---------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
 
 
-#define M 6         
-#define N 3 
-#define snareLength 6
-#define len 6
-#define bigLen 8 // 2 ^ 2 
+#define M 4         
+#define N 2 
+#define snareLength 4
+#define len 4
 
 _Bool nondet_bool();
 unsigned int nondet_uint();
 
 typedef unsigned __CPROVER_bitvector[M] bitvector; 
 typedef unsigned __CPROVER_bitvector[snareLength] snareVector; 
-typedef unsigned __CPROVER_bitvector[bigLen] bigvector; 
 
 unsigned int  nondet (){  
   unsigned int num = nondet_uint();
@@ -31,24 +30,15 @@ unsigned int zeroTon(unsigned int n) {
     return result ;
 };
 
-bigvector nondetBV() {
-     bigvector bee;
-  //   __CPROVER_assume(bee >= 0b0 && bee <= 0b1111);  
-     return bee;
-}
-
-
 struct EdgeBag
  {
    unsigned int ith;
    unsigned int jth;
    unsigned int count;
-   unsigned int count2;
    bitvector edgeWeight;
    snareVector  vSnare;
    snareVector tSnare;
    snareVector combinedMask; 
-   snareVector combinedMask2; 
 };
 
 // ------------------------------------------------ TESTED ---------------------------------------------------------
@@ -64,13 +54,10 @@ int  main()
     _Bool Ck=0, Cf = 1, C0, C1, C2 = 1, C3 = 1, C4, C5, C6 , C7; 
 
     bitvector Vnodes[N];
-    bitvector Tnodes[N];
-    bigvector onoffChoice[snareLength],vf; 
-    bigvector b0 = 0b0, b1 = 0b1 ;
-
+    bitvector Tnodes[N] ;
 
     bitvector  fareTotal, inTotal, outTotal , outVSnareTotal , inVSnareTotal , outTSnareTotal , inTSnareTotal ;
-    snareVector total, cond2Total, cond2fareTotal, centTotal,  placeHolder, v, vl, vl2, t, f, v2, lastv, lastv2 ,nv, nv2, v0, v02 ;
+    snareVector total, cond2Total, cond2fareTotal, centTotal, placeHolder, v, vl, vl2, t, f, v2, lastv, lastv2 ,nv, nv2, v0, v02 ;
     snareVector Tedge[N][N], Vedge[N][N] , Vedge2[N][N] , Tedge2[N][N] , fComp , bComp;    
     snareVector friendMatrix[snareLength];     
     snareVector onOffMatrix[N],vOnOffMatrix[N],  stCorres;
@@ -78,24 +65,59 @@ int  main()
     unsigned int graph[N][N]; 
 
 	edgeCount = 0;
-        for (i = 0; i < N; i++) {
-            for (j = 0; j < N; j++) {
-		  if(i != j) {
-		      __CPROVER_assume(graph[i][j] >= 0 && graph[i][j] <=2);
-		      if (graph[i][j] == 1)
-                          edgeCount += 1;	
-                      else if (graph[i][j] == 2) 
-			  edgeCount += 2;
+    for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+			if(i != j) {
+				__CPROVER_assume(graph[i][j] >= 0 && graph[i][j] <=2);
+			    if (graph[i][j] == 1)
+                    edgeCount += 1;	
+                else if (graph[i][j] == 2) 
+					edgeCount += 2;
+
             }
              else  
-		  __CPROVER_assume(graph[i][j] == 0); 
+				__CPROVER_assume(graph[i][j] == 0); 
 
-  	} 
+			} 
     }
 
 
      __CPROVER_assume(edgeCount == len);
 
+    C5 = 1;
+
+    for ( i = 0; i < N; i++) {
+        for (j = 0; j < N ; j++) {
+            if ( graph[i][j] >= 1 && (i != j)) {  // if there is Direct edge we are done
+                C5 = C5 && 1;
+             }
+            else if (i != j) {  // Else case
+                unsigned int nub;  // Define max hop
+                __CPROVER_assume( nub >= 1 && (nub <= N-2));
+                unsigned int gPath[nub];
+                
+                for (k = 0; k < nub; k++) {   // zdynamic N - 2 iteration
+                     gPath[k] = zeroTon(N-1);
+                 }
+                 
+                //  Make sure first edge is connected to i  and last edge is connected to j
+                if( (graph[i][gPath[0]] >= 1) && (graph[gPath[nub - 1]][j] >= 1))   
+                     C5 = C5 && 1;
+                else 
+                     C5 = 0;
+
+               // rest Of the case is just checking edge btw consecutive array elements
+                 for (l = 0; l < nub - 1; l++) {         //Dynamic N - 3  iteration
+                       if ( graph[gPath[l]][gPath[l+1]] >= 1 ) 
+                               C5 = C5 && 1;
+                        else 
+                            C5 = 0;
+                     }
+
+            }
+        }
+    }
+   
 
     //  Define the Container as Basis of our work  --------------------------
      struct EdgeBag edgeBag[len];
@@ -129,10 +151,26 @@ int  main()
                    Tedge2[i][j] = edgeBag[edgePos].tSnare;
                    edgePos = edgePos + 1;
              }
+/*
+             if ((graph[i][j] == 3)) {
+                  edgeBag[edgePos].ith = i;      // Record the Source Node  
+                  edgeBag[edgePos].jth = j;      // Record the Target Node
+ 
+                 // Only molecule present at the nodes are allowed to fly out.
+                   __CPROVER_assume((edgeBag[edgePos].vSnare  & (~ Vnodes[i])) == 0);
+                   __CPROVER_assume((edgeBag[edgePos].tSnare  & (~ Tnodes[i])) == 0);
+                    // Additional Vedge2[i][j] and Tedge2[i][j] is used to be lookup value in global steady state check condition.
+                   Vedge2[i][j] = edgeBag[edgePos].vSnare;
+                   Tedge2[i][j] = edgeBag[edgePos].tSnare;
+                   edgePos = edgePos + 1;
+             }
+ 
+*/
 
           }
      }
-/*     
+     
+
          C4 = 0;
          for ( i = 0; i < N ; i++) {
              calc = 0;
@@ -146,7 +184,8 @@ int  main()
                  C4 = 1;
              }
          }
- */    
+
+     
     C0 = 1; 
     
 	for (j = 0; j < len; j++) {   
@@ -195,11 +234,11 @@ int  main()
                
 	            g0  = graph[valj][path[0]];    // g0 is unsigned int checks if there is an edge btw two nodes
 	            v0  = Vedge[valj][path[0]];    // snareVector gets the edgeweight of the corresponding edge.
-                    v2  = Vedge2[valj][path[0]];
+                v2  = Vedge2[valj][path[0]];
                
-                    gl  = graph[path[big - 1]][vali];
+                gl  = graph[path[big - 1]][vali];
 	            vl  = Vedge[path[big - 1]][vali];    // snareVector gets the edgeweight of the corresponding edge.
-                   vl2 = Vedge2[path[big - 1]][vali];
+                vl2 = Vedge2[path[big - 1]][vali];
 
                if ( ( (( g0 == 1) && (v0 & (1 << j))) ||  ( (g0 == 2) &&  ( (v0 & (1 << j)) || ( v2 & (1 << j)) ) )) &&  ((( gl == 1) && (vl & (1 << j))) ||  ( (gl == 2) &&  ( (vl & ( 1 << j)) || ( vl2 & (1 << j)) ) )))  {                  
                    C1 = C1 && 1;
@@ -289,24 +328,36 @@ int  main()
         } 
       }  // jth for closed    
     }   
+/*
+    C6 = 1;
+    //  C4 : Boolean Condition : Each Row of FriendMatrix is Non-zero : 
+     for  (j = 0; j < snareLength; j++) {
+         if (friendMatrix[j] & (( 1 << snareLength) -1)) {
+             C6 = C6 && 1;
+         }
+         else {
+             C6 = C6 && 0;
+         }
+     }
 
- for  (i = 0; i < snareLength ; i++ ) {
-         onoffChoice[i] = nondetBV();
-    }
 
+   C7 = 1;
+   //  C5 : Bool , Each Row of OnOffMatrix is Non-zero :
+    for  (j = 0; j < N; j++) {
+         if (onOffMatrix[j] & (( 1 << snareLength) -1))  {
+             C7 = C7 && 1;
+         }
+         else {
+             C7 = C7 && 0;
+         }
+     }
+*/
 
-C2 = 1;
-    C3 = 1;
-
-for (i = 0; i < len; i++) {
-        edgeBag[i].count = 0;
-	edgeBag[i].count2 = 0;
-	edgeBag[i].combinedMask = 0b0;
-	edgeBag[i].combinedMask2 = 0b0;
+    for  (i = 0; i < len; i++) {
         centTotal = 0b0;
         total = 0b0;
         ticks = 0;
-	Ck = 0;
+		Ck = 0;
         
         //  Check if jth vSnare is present then check if all its t-snare frds are present on the edge. 
         //  If yes don't consider him as a cnadidate to check the fusion that happens btw current nodes.
@@ -318,24 +369,15 @@ for (i = 0; i < len; i++) {
            valj = edgeBag[i].jth;
            vali = edgeBag[i].ith;
           
-           if( (v & (1 << j)) && ((t & f) == 0) ){  // If Molecule is present and not inhibited
-              centTotal = centTotal | f;           // Just store its configuration 
-              ticks = ticks + 1;                  // Increase the number of possible candidates
-              vf  =  onoffChoice[valj];
-              placeHolder = 0b0;
-              // If Traget Node and Onoffmatrix and friendmatrix have a common element present and
-             // Check for each of the Tsnares whetehr they are on or off stage :)
-               for ( l = 0; l < snareLength; l++) {
-                       if ( (Tnodes[valj] & (1 << l))  &&  ((vf  & (b1 << l)) != b0)) {
-                         placeHolder = (placeHolder | (1 << l));
-                }
+           if( (v & (1 << j)) && ((t & f) == 0) ){
+              centTotal = centTotal | f;
+              ticks = ticks + 1;     
+              
+              if ( (((Tnodes[valj] & onOffMatrix[valj]) & f)  != 0)  &&  ((onOffMatrix[vali] & f) == 0)) {
+                 Ck = Ck || 1 ;                                  
               }
-              // If possible to fuse :)
-             if  ( ((Tnodes[valj] &  placeHolder) & f ) != 0) {                  
-                   Ck =  1;
-	     }
+           }
          }
-       }
            
          edgeBag[i].combinedMask = centTotal;
          edgeBag[i].count = ticks;
@@ -348,25 +390,14 @@ for (i = 0; i < len; i++) {
          }
 
         for (k = 0; k < N; k++) {
-	     if( k != edgeBag[i].jth) {
-		// Have to do some computation to calculate the OnOff matrix thing :
-		 vf  =  onoffChoice[k];
-	        //Build the place Holder again
-		placeHolder = 0b0;
-                for ( l = 0; l < snareLength; l++) {
-	               if (((Tnodes[k] & (1 << l)) != 0)  &&  ((vf  & (b1 << l)) != b0)) {
-		       placeHolder = (placeHolder | (1 << l));
-	          }
-                }
-
-		 if (((placeHolder & Tnodes[k]) & edgeBag[i].combinedMask) == 0){
-		        C3 = C3 && 1;
-		 }
-		 else { 
-		        C3 = 0;
-                 }
-	      }
-	} 
+			if( k != edgeBag[i].jth) {
+				if (((onOffMatrix[k] & Tnodes[k]) & edgeBag[i].combinedMask) == 0){
+					 C3 = C3 && 1;
+				 }
+				 else 
+				    C3 = 0;
+		    }
+		} 
 
     }
 
@@ -406,8 +437,8 @@ for (i = 0; i < len; i++) {
     printf("\nThe value of : \n C0 = %d \n C1 : %d \n C2 : %d , C3 : %d \n,C4 : %d , C5 : %d",C0,C1,C2,C3,C4,C5);
     printf(" the value of mr.Ticks is %d and len was %d ", ticks , len);
     
-//   assert(0);
-  __CPROVER_assert(!(C0 && C1 && C2 && C3 ) , "Graph that satisfy friendZoned model exists");  
+  // assert(0);
+  __CPROVER_assert(!(C0 && C1 && C2 && C3 && (C5)) , "Graph that satisfy friendZoned model exists");  
  
 }
 

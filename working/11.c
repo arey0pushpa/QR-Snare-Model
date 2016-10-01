@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define M 4         
+#define M 2         
 #define N 2
-#define snareLength 4
-#define dLen 8  // 2 * M  
-#define bigLen 256 // 2 ^ (2*M) 
+#define snareLength 2
+#define dLen 4  // 2 * M  
+#define bigLen 16 // 2 ^ (2*M) 
 #define len 2
 
 
@@ -273,16 +273,6 @@ int  main()
     }   
 
 
-
-   for  (i = 0; i < snareLength ; i++ ) {
-      edegeInhib[snareLength]  = nondetBV();
-   }
-
-   for (i= 0; i < snareLength ; i++ ) {
-      nodeInhib[snareLength] = nondetBV();	
-   }
-
-
     for  (i = 0; i < len; i++) {
         edgeBag[i].combinedMask = 0b0; 
         edgeBag[i].combinedMask2 = 0b0; 
@@ -307,7 +297,7 @@ int  main()
            bv = ((v << M) | t);
            bvv = ((Vnodes[valj] << M) | Tnodes[valj]);
 
-           if ( (v & (1 << j)) && ((vf & (b1 << bv)) != b0) ) {    
+           if ( (v & (1 << j)) && ((vf & (b1 << bv)) == b0) ) {    
               edgeBag[i].combinedMask = edgeBag[i].combinedMask | f;
               edgeBag[i].count = edgeBag[i].count + 1;    
          
@@ -376,7 +366,36 @@ int  main()
 	 }
  }  
      
-     
+    
+   for  (i = 0; i < len; i++) {
+
+        printf("The edge No.%d has this config : \n There is an edge between graph[%d][%d]" , i , edgeBag[i].ith, edgeBag[i].jth);
+
+        printf (" vSnare =  %d \n tSnare = %d\n combinedMask = %d \n  combinedMask = %d \n counts = %d \n counts2 = %d " ,edgeBag[i].vSnare , edgeBag[i].tSnare, edgeBag[i].combinedMask, edgeBag[i].combinedMask2, edgeBag[i].count,edgeBag[i].count2);
+   
+   }
+   
+    for  (i = 0; i < snareLength; i++) {
+        printf( "\n The qrfusionMatrix[[%d] = %d ", i , qrfusionMatrix[i]);
+    }
+
+    for  (i = 0; i < snareLength; i++){
+        printf(" \n The rqfusionMatrix[%d] = %d ", i, rqfusionMatrix[i]);
+    }
+
+    for  (i = 0; i < N; i++){
+        printf("T-Nodes[%d] = %d" , i , Tnodes[i]);
+    }
+    for  (i = 0; i < N; i++){
+        printf("V-Nodes[%d] = %d" , i , Vnodes[i]);
+    }
+
+   for  (i = 0; i < dLen; i++){
+	    printf(" edegeInhib[%d] = %d" , i ,  edegeInhib[i]);
+        printf("nodeInhib[%d] = %d" , i ,  nodeInhib[i]);
+  }
+ 
+
     for(i = 0;i < N ; i++) {
         for( j = 0;j < N; j++) {
             printf("Graph[%d][%d] = %d",i,j,graph[i][j]);

@@ -116,7 +116,7 @@ Post-processing
 Solving with MiniSAT 2.2.1 with simplifier
 61248 variables, 198999 clauses
 SAT checker: instance is SATISFIABLE
-Runtime decision procedure: 0.554s
+Runtime decision procedure: 0.532s
 Building error trace
 
 Counterexample:
@@ -363,11 +363,11 @@ State 77 file 1.c line 61 function main thread 0
 
 State 78 file 1.c line 61 function main thread 0
 ----------------------------------------------------
-  edegeInhib={ 33094, 337, 49232, 12832 } ({ 1000000101000110, 0000000101010001, 1100000001010000, 0011001000100000 })
+  edegeInhib={ 33030, 273, 49168, 12896 } ({ 1000000100000110, 0000000100010001, 1100000000010000, 0011001001100000 })
 
 State 79 file 1.c line 61 function main thread 0
 ----------------------------------------------------
-  nodeInhib={ 17568, 4128, 2048, 17417 } ({ 0100010010100000, 0001000000100000, 0000100000000000, 0100010000001001 })
+  nodeInhib={ 1184, 4328, 2208, 1089 } ({ 0000010010100000, 0001000011101000, 0000100010100000, 0000010001000001 })
 
 State 80 file 1.c line 62 function main thread 0
 ----------------------------------------------------
@@ -379,11 +379,11 @@ State 81 file 1.c line 62 function main thread 0
 
 State 82 file 1.c line 64 function main thread 0
 ----------------------------------------------------
-  Vnodes={ 1, 3 } ({ 01, 11 })
+  Vnodes={ 1, 1 } ({ 01, 01 })
 
 State 83 file 1.c line 64 function main thread 0
 ----------------------------------------------------
-  Tnodes={ 3, 2 } ({ 11, 10 })
+  Tnodes={ 2, 2 } ({ 10, 10 })
 
 State 84 file 1.c line 65 function main thread 0
 ----------------------------------------------------
@@ -495,7 +495,7 @@ State 110 file 1.c line 69 function main thread 0
 
 State 111 file 1.c line 69 function main thread 0
 ----------------------------------------------------
-  Vedge={ { 0, 0 }, { 0, 0 } } ({ { 00, 00 }, { 00, 00 } })
+  Vedge={ { 0, 0 }, { 0, 2 } } ({ { 00, 00 }, { 00, 10 } })
 
 State 112 file 1.c line 69 function main thread 0
 ----------------------------------------------------
@@ -503,7 +503,7 @@ State 112 file 1.c line 69 function main thread 0
 
 State 113 file 1.c line 69 function main thread 0
 ----------------------------------------------------
-  Tedge2={ { 0, 0 }, { 0, 0 } } ({ { 00, 00 }, { 00, 00 } })
+  Tedge2={ { 0, 1 }, { 0, 0 } } ({ { 00, 01 }, { 00, 00 } })
 
 State 114 file 1.c line 69 function main thread 0
 ----------------------------------------------------
@@ -515,11 +515,11 @@ State 115 file 1.c line 69 function main thread 0
 
 State 116 file 1.c line 70 function main thread 0
 ----------------------------------------------------
-  qrfusionMatrix={ 2, 0 } ({ 10, 00 })
+  qrfusionMatrix={ 0, 2 } ({ 00, 10 })
 
 State 117 file 1.c line 70 function main thread 0
 ----------------------------------------------------
-  rqfusionMatrix={ 0, 1 } ({ 00, 01 })
+  rqfusionMatrix={ 3, 2 } ({ 11, 10 })
 
 State 118 file 1.c line 72 function main thread 0
 ----------------------------------------------------
@@ -868,15 +868,15 @@ State 380 file 1.c line 294 function main thread 0
 
 State 382 file 1.c line 295 function main thread 0
 ----------------------------------------------------
-  f=2 (10)
+  f=0 (00)
 
 State 383 file 1.c line 296 function main thread 0
 ----------------------------------------------------
-  h=0 (00)
+  h=3 (11)
 
 State 384 file 1.c line 297 function main thread 0
 ----------------------------------------------------
-  vf=49232 (1100000001010000)
+  vf=49168 (1100000000010000)
 
 State 385 file 1.c line 298 function main thread 0
 ----------------------------------------------------
@@ -884,11 +884,11 @@ State 385 file 1.c line 298 function main thread 0
 
 State 386 file 1.c line 299 function main thread 0
 ----------------------------------------------------
-  bvv=14 (1110)
+  bvv=6 (0110)
 
 State 388 file 1.c line 302 function main thread 0
 ----------------------------------------------------
-  edgeBag[(long int)i!0@1].combinedMask=2 (10)
+  edgeBag[(long int)i!0@1].combinedMask=0 (00)
 
 State 389 file 1.c line 303 function main thread 0
 ----------------------------------------------------
@@ -896,7 +896,7 @@ State 389 file 1.c line 303 function main thread 0
 
 State 391 file 1.c line 306 function main thread 0
 ----------------------------------------------------
-  placeHolder=2 (10)
+  placeHolder=0 (00)
 
 State 392 file 1.c line 307 function main thread 0
 ----------------------------------------------------
@@ -906,69 +906,69 @@ State 395 file 1.c line 307 function main thread 0
 ----------------------------------------------------
   l=1 (00000000000000000000000000000001)
 
-State 399 file 1.c line 309 function main thread 0
-----------------------------------------------------
-  vff=17417 (0100010000001001)
-
-State 401 file 1.c line 311 function main thread 0
-----------------------------------------------------
-  Ck=TRUE (00000001)
-
-State 402 file 1.c line 307 function main thread 0
+State 399 file 1.c line 307 function main thread 0
 ----------------------------------------------------
   l=2 (00000000000000000000000000000010)
 
-State 405 file 1.c line 320 function main thread 0
+State 402 file 1.c line 320 function main thread 0
 ----------------------------------------------------
-  vf=33094 (1000000101000110)
+  vf=33030 (1000000100000110)
 
-State 407 file 1.c line 294 function main thread 0
+State 404 file 1.c line 294 function main thread 0
 ----------------------------------------------------
   j=1 (00000000000000000000000000000001)
 
-State 410 file 1.c line 295 function main thread 0
+State 407 file 1.c line 295 function main thread 0
 ----------------------------------------------------
-  f=0 (00)
+  f=2 (10)
 
-State 411 file 1.c line 296 function main thread 0
+State 408 file 1.c line 296 function main thread 0
 ----------------------------------------------------
-  h=1 (01)
+  h=2 (10)
 
-State 412 file 1.c line 297 function main thread 0
+State 409 file 1.c line 297 function main thread 0
 ----------------------------------------------------
-  vf=12832 (0011001000100000)
+  vf=12896 (0011001001100000)
 
-State 413 file 1.c line 298 function main thread 0
+State 410 file 1.c line 298 function main thread 0
 ----------------------------------------------------
   bv=6 (0110)
 
-State 414 file 1.c line 299 function main thread 0
+State 411 file 1.c line 299 function main thread 0
 ----------------------------------------------------
-  bvv=14 (1110)
+  bvv=6 (0110)
 
-State 416 file 1.c line 320 function main thread 0
+State 413 file 1.c line 320 function main thread 0
 ----------------------------------------------------
-  vf=337 (0000000101010001)
+  vf=273 (0000000100010001)
 
-State 418 file 1.c line 322 function main thread 0
+State 415 file 1.c line 322 function main thread 0
 ----------------------------------------------------
-  edgeBag[(long int)i!0@1].combinedMask2=1 (01)
+  edgeBag[(long int)i!0@1].combinedMask2=2 (10)
 
-State 419 file 1.c line 323 function main thread 0
+State 416 file 1.c line 323 function main thread 0
 ----------------------------------------------------
   edgeBag[(long int)i!0@1].count2=1 (00000000000000000000000000000001)
 
-State 420 file 1.c line 324 function main thread 0
+State 417 file 1.c line 324 function main thread 0
 ----------------------------------------------------
-  placeHolder=0 (00)
+  placeHolder=2 (10)
 
-State 422 file 1.c line 326 function main thread 0
+State 419 file 1.c line 326 function main thread 0
 ----------------------------------------------------
   l=0 (00000000000000000000000000000000)
 
-State 425 file 1.c line 326 function main thread 0
+State 422 file 1.c line 326 function main thread 0
 ----------------------------------------------------
   l=1 (00000000000000000000000000000001)
+
+State 426 file 1.c line 328 function main thread 0
+----------------------------------------------------
+  vff=1089 (0000010001000001)
+
+State 428 file 1.c line 330 function main thread 0
+----------------------------------------------------
+  Cl=TRUE (00000001)
 
 State 429 file 1.c line 326 function main thread 0
 ----------------------------------------------------
@@ -988,401 +988,381 @@ State 438 file 1.c line 344 function main thread 0
 
 State 441 file 1.c line 346 function main thread 0
 ----------------------------------------------------
-  bv=7 (0111)
+  bv=6 (0110)
 
 State 442 file 1.c line 348 function main thread 0
 ----------------------------------------------------
   m=0 (00000000000000000000000000000000)
 
-State 447 file 1.c line 361 function main thread 0
-----------------------------------------------------
-  vf=2048 (0000100000000000)
-
-State 449 file 1.c line 348 function main thread 0
+State 446 file 1.c line 348 function main thread 0
 ----------------------------------------------------
   m=1 (00000000000000000000000000000001)
 
-State 454 file 1.c line 352 function main thread 0
-----------------------------------------------------
-  vf=4128 (0001000000100000)
-
-State 457 file 1.c line 348 function main thread 0
+State 452 file 1.c line 348 function main thread 0
 ----------------------------------------------------
   m=2 (00000000000000000000000000000010)
 
-State 460 file 1.c line 344 function main thread 0
+State 455 file 1.c line 344 function main thread 0
 ----------------------------------------------------
   k=1 (00000000000000000000000000000001)
 
-State 464 file 1.c line 344 function main thread 0
+State 459 file 1.c line 344 function main thread 0
 ----------------------------------------------------
   k=2 (00000000000000000000000000000010)
 
-State 467 file 1.c line 277 function main thread 0
+State 462 file 1.c line 277 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
 
-State 470 file 1.c line 278 function main thread 0
+State 465 file 1.c line 278 function main thread 0
 ----------------------------------------------------
   edgeBag[(long int)i!0@1].combinedMask=0 (00)
 
-State 471 file 1.c line 279 function main thread 0
+State 466 file 1.c line 279 function main thread 0
 ----------------------------------------------------
   edgeBag[(long int)i!0@1].combinedMask2=0 (00)
 
-State 472 file 1.c line 281 function main thread 0
+State 467 file 1.c line 281 function main thread 0
 ----------------------------------------------------
   total=0 (00)
 
-State 473 file 1.c line 282 function main thread 0
+State 468 file 1.c line 282 function main thread 0
 ----------------------------------------------------
   edgeBag[(long int)i!0@1].count=0 (00000000000000000000000000000000)
 
-State 474 file 1.c line 283 function main thread 0
+State 469 file 1.c line 283 function main thread 0
 ----------------------------------------------------
   edgeBag[(long int)i!0@1].count2=0 (00000000000000000000000000000000)
 
-State 475 file 1.c line 285 function main thread 0
+State 470 file 1.c line 285 function main thread 0
 ----------------------------------------------------
   Ck=FALSE (00000000)
 
-State 476 file 1.c line 286 function main thread 0
+State 471 file 1.c line 286 function main thread 0
 ----------------------------------------------------
   Cl=FALSE (00000000)
 
-State 477 file 1.c line 288 function main thread 0
+State 472 file 1.c line 288 function main thread 0
 ----------------------------------------------------
   v=1 (01)
 
-State 478 file 1.c line 289 function main thread 0
+State 473 file 1.c line 289 function main thread 0
 ----------------------------------------------------
   t=2 (10)
 
-State 479 file 1.c line 291 function main thread 0
+State 474 file 1.c line 291 function main thread 0
 ----------------------------------------------------
   valj=0 (00000000000000000000000000000000)
 
-State 480 file 1.c line 292 function main thread 0
+State 475 file 1.c line 292 function main thread 0
 ----------------------------------------------------
   vali=1 (00000000000000000000000000000001)
 
-State 481 file 1.c line 294 function main thread 0
+State 476 file 1.c line 294 function main thread 0
 ----------------------------------------------------
   j=0 (00000000000000000000000000000000)
 
-State 483 file 1.c line 295 function main thread 0
-----------------------------------------------------
-  f=2 (10)
-
-State 484 file 1.c line 296 function main thread 0
-----------------------------------------------------
-  h=0 (00)
-
-State 485 file 1.c line 297 function main thread 0
-----------------------------------------------------
-  vf=49232 (1100000001010000)
-
-State 486 file 1.c line 298 function main thread 0
-----------------------------------------------------
-  bv=6 (0110)
-
-State 487 file 1.c line 299 function main thread 0
-----------------------------------------------------
-  bvv=7 (0111)
-
-State 489 file 1.c line 302 function main thread 0
-----------------------------------------------------
-  edgeBag[(long int)i!0@1].combinedMask=2 (10)
-
-State 490 file 1.c line 303 function main thread 0
-----------------------------------------------------
-  edgeBag[(long int)i!0@1].count=1 (00000000000000000000000000000001)
-
-State 492 file 1.c line 306 function main thread 0
-----------------------------------------------------
-  placeHolder=2 (10)
-
-State 493 file 1.c line 307 function main thread 0
-----------------------------------------------------
-  l=0 (00000000000000000000000000000000)
-
-State 496 file 1.c line 307 function main thread 0
-----------------------------------------------------
-  l=1 (00000000000000000000000000000001)
-
-State 500 file 1.c line 309 function main thread 0
-----------------------------------------------------
-  vff=17417 (0100010000001001)
-
-State 502 file 1.c line 307 function main thread 0
-----------------------------------------------------
-  l=2 (00000000000000000000000000000010)
-
-State 505 file 1.c line 320 function main thread 0
-----------------------------------------------------
-  vf=33094 (1000000101000110)
-
-State 507 file 1.c line 294 function main thread 0
-----------------------------------------------------
-  j=1 (00000000000000000000000000000001)
-
-State 510 file 1.c line 295 function main thread 0
+State 478 file 1.c line 295 function main thread 0
 ----------------------------------------------------
   f=0 (00)
 
-State 511 file 1.c line 296 function main thread 0
+State 479 file 1.c line 296 function main thread 0
 ----------------------------------------------------
-  h=1 (01)
+  h=3 (11)
 
-State 512 file 1.c line 297 function main thread 0
+State 480 file 1.c line 297 function main thread 0
 ----------------------------------------------------
-  vf=12832 (0011001000100000)
+  vf=49168 (1100000000010000)
 
-State 513 file 1.c line 298 function main thread 0
+State 481 file 1.c line 298 function main thread 0
 ----------------------------------------------------
   bv=6 (0110)
 
-State 514 file 1.c line 299 function main thread 0
+State 482 file 1.c line 299 function main thread 0
 ----------------------------------------------------
-  bvv=7 (0111)
+  bvv=6 (0110)
 
-State 516 file 1.c line 320 function main thread 0
+State 484 file 1.c line 302 function main thread 0
 ----------------------------------------------------
-  vf=337 (0000000101010001)
+  edgeBag[(long int)i!0@1].combinedMask=0 (00)
 
-State 518 file 1.c line 322 function main thread 0
+State 485 file 1.c line 303 function main thread 0
 ----------------------------------------------------
-  edgeBag[(long int)i!0@1].combinedMask2=1 (01)
+  edgeBag[(long int)i!0@1].count=1 (00000000000000000000000000000001)
 
-State 519 file 1.c line 323 function main thread 0
+State 487 file 1.c line 306 function main thread 0
 ----------------------------------------------------
-  edgeBag[(long int)i!0@1].count2=1 (00000000000000000000000000000001)
+  placeHolder=0 (00)
 
-State 520 file 1.c line 324 function main thread 0
-----------------------------------------------------
-  placeHolder=1 (01)
-
-State 522 file 1.c line 326 function main thread 0
+State 488 file 1.c line 307 function main thread 0
 ----------------------------------------------------
   l=0 (00000000000000000000000000000000)
 
-State 525 file 1.c line 328 function main thread 0
-----------------------------------------------------
-  vff=17568 (0100010010100000)
-
-State 527 file 1.c line 330 function main thread 0
-----------------------------------------------------
-  Cl=TRUE (00000001)
-
-State 528 file 1.c line 326 function main thread 0
+State 491 file 1.c line 307 function main thread 0
 ----------------------------------------------------
   l=1 (00000000000000000000000000000001)
 
-State 532 file 1.c line 326 function main thread 0
+State 495 file 1.c line 307 function main thread 0
 ----------------------------------------------------
   l=2 (00000000000000000000000000000010)
 
-State 535 file 1.c line 294 function main thread 0
+State 498 file 1.c line 320 function main thread 0
+----------------------------------------------------
+  vf=33030 (1000000100000110)
+
+State 500 file 1.c line 294 function main thread 0
+----------------------------------------------------
+  j=1 (00000000000000000000000000000001)
+
+State 503 file 1.c line 295 function main thread 0
+----------------------------------------------------
+  f=2 (10)
+
+State 504 file 1.c line 296 function main thread 0
+----------------------------------------------------
+  h=2 (10)
+
+State 505 file 1.c line 297 function main thread 0
+----------------------------------------------------
+  vf=12896 (0011001001100000)
+
+State 506 file 1.c line 298 function main thread 0
+----------------------------------------------------
+  bv=6 (0110)
+
+State 507 file 1.c line 299 function main thread 0
+----------------------------------------------------
+  bvv=6 (0110)
+
+State 509 file 1.c line 320 function main thread 0
+----------------------------------------------------
+  vf=273 (0000000100010001)
+
+State 511 file 1.c line 322 function main thread 0
+----------------------------------------------------
+  edgeBag[(long int)i!0@1].combinedMask2=2 (10)
+
+State 512 file 1.c line 323 function main thread 0
+----------------------------------------------------
+  edgeBag[(long int)i!0@1].count2=1 (00000000000000000000000000000001)
+
+State 513 file 1.c line 324 function main thread 0
+----------------------------------------------------
+  placeHolder=2 (10)
+
+State 515 file 1.c line 326 function main thread 0
+----------------------------------------------------
+  l=0 (00000000000000000000000000000000)
+
+State 518 file 1.c line 326 function main thread 0
+----------------------------------------------------
+  l=1 (00000000000000000000000000000001)
+
+State 522 file 1.c line 328 function main thread 0
+----------------------------------------------------
+  vff=1089 (0000010001000001)
+
+State 524 file 1.c line 330 function main thread 0
+----------------------------------------------------
+  Cl=TRUE (00000001)
+
+State 525 file 1.c line 326 function main thread 0
+----------------------------------------------------
+  l=2 (00000000000000000000000000000010)
+
+State 528 file 1.c line 294 function main thread 0
 ----------------------------------------------------
   j=2 (00000000000000000000000000000010)
 
-State 539 file 1.c line 338 function main thread 0
+State 532 file 1.c line 338 function main thread 0
 ----------------------------------------------------
   C2=TRUE (00000001)
 
-State 541 file 1.c line 344 function main thread 0
+State 534 file 1.c line 344 function main thread 0
 ----------------------------------------------------
   k=0 (00000000000000000000000000000000)
 
-State 544 file 1.c line 344 function main thread 0
+State 537 file 1.c line 344 function main thread 0
 ----------------------------------------------------
   k=1 (00000000000000000000000000000001)
 
-State 548 file 1.c line 346 function main thread 0
+State 541 file 1.c line 346 function main thread 0
 ----------------------------------------------------
-  bv=14 (1110)
+  bv=6 (0110)
 
-State 549 file 1.c line 348 function main thread 0
+State 542 file 1.c line 348 function main thread 0
 ----------------------------------------------------
   m=0 (00000000000000000000000000000000)
 
-State 554 file 1.c line 361 function main thread 0
-----------------------------------------------------
-  vf=2048 (0000100000000000)
-
-State 556 file 1.c line 348 function main thread 0
+State 546 file 1.c line 348 function main thread 0
 ----------------------------------------------------
   m=1 (00000000000000000000000000000001)
 
-State 561 file 1.c line 352 function main thread 0
-----------------------------------------------------
-  vf=4128 (0001000000100000)
-
-State 564 file 1.c line 348 function main thread 0
+State 552 file 1.c line 348 function main thread 0
 ----------------------------------------------------
   m=2 (00000000000000000000000000000010)
 
-State 567 file 1.c line 344 function main thread 0
+State 555 file 1.c line 344 function main thread 0
 ----------------------------------------------------
   k=2 (00000000000000000000000000000010)
 
-State 570 file 1.c line 277 function main thread 0
+State 558 file 1.c line 277 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
 
-State 573 file 1.c line 373 function main thread 0
+State 561 file 1.c line 373 function main thread 0
 ----------------------------------------------------
   i=0 (00000000000000000000000000000000)
 The edge No.0 has this config : 
  There is an edge between graph[0][1]
  vSnare =  1 
  tSnare = 2
- combinedMask = 2 
-  combinedMask = 1 
+ combinedMask = 0 
+  combinedMask = 2 
  counts = 1 
  counts2 = 1 
 
-State 577 file 1.c line 373 function main thread 0
+State 565 file 1.c line 373 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
 The edge No.1 has this config : 
  There is an edge between graph[1][0]
  vSnare =  1 
  tSnare = 2
- combinedMask = 2 
-  combinedMask = 1 
+ combinedMask = 0 
+  combinedMask = 2 
  counts = 1 
  counts2 = 1 
 
-State 582 file 1.c line 373 function main thread 0
+State 570 file 1.c line 373 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
 
-State 585 file 1.c line 381 function main thread 0
+State 573 file 1.c line 381 function main thread 0
 ----------------------------------------------------
   i=0 (00000000000000000000000000000000)
 
- The qrfusionMatrix[[0] = 2 
+ The qrfusionMatrix[[0] = 0 
 
-State 588 file 1.c line 381 function main thread 0
+State 576 file 1.c line 381 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
 
- The qrfusionMatrix[[1] = 0 
+ The qrfusionMatrix[[1] = 2 
 
-State 592 file 1.c line 381 function main thread 0
+State 580 file 1.c line 381 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
 
-State 595 file 1.c line 385 function main thread 0
+State 583 file 1.c line 385 function main thread 0
 ----------------------------------------------------
   i=0 (00000000000000000000000000000000)
  
- The rqfusionMatrix[0] = 0 
+ The rqfusionMatrix[0] = 3 
 
-State 598 file 1.c line 385 function main thread 0
+State 586 file 1.c line 385 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
  
- The rqfusionMatrix[1] = 1 
+ The rqfusionMatrix[1] = 2 
 
-State 602 file 1.c line 385 function main thread 0
+State 590 file 1.c line 385 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
 
-State 605 file 1.c line 389 function main thread 0
+State 593 file 1.c line 389 function main thread 0
 ----------------------------------------------------
   i=0 (00000000000000000000000000000000)
-T-Nodes[0] = 3
+T-Nodes[0] = 2
 
-State 608 file 1.c line 389 function main thread 0
+State 596 file 1.c line 389 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
 T-Nodes[1] = 2
 
-State 612 file 1.c line 389 function main thread 0
+State 600 file 1.c line 389 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
 
-State 615 file 1.c line 392 function main thread 0
+State 603 file 1.c line 392 function main thread 0
 ----------------------------------------------------
   i=0 (00000000000000000000000000000000)
 V-Nodes[0] = 1
 
-State 618 file 1.c line 392 function main thread 0
+State 606 file 1.c line 392 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
-V-Nodes[1] = 3
+V-Nodes[1] = 1
 
-State 622 file 1.c line 392 function main thread 0
+State 610 file 1.c line 392 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
 
-State 625 file 1.c line 396 function main thread 0
+State 613 file 1.c line 396 function main thread 0
 ----------------------------------------------------
   i=0 (00000000000000000000000000000000)
- edegeInhib[0] = 33094
-nodeInhib[0] = 17568
+ edegeInhib[0] = 33030
+nodeInhib[0] = 1184
 
-State 629 file 1.c line 396 function main thread 0
+State 617 file 1.c line 396 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
- edegeInhib[1] = 337
-nodeInhib[1] = 4128
+ edegeInhib[1] = 273
+nodeInhib[1] = 4328
 
-State 634 file 1.c line 396 function main thread 0
+State 622 file 1.c line 396 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
- edegeInhib[2] = 49232
-nodeInhib[2] = 2048
+ edegeInhib[2] = 49168
+nodeInhib[2] = 2208
 
-State 639 file 1.c line 396 function main thread 0
+State 627 file 1.c line 396 function main thread 0
 ----------------------------------------------------
   i=3 (00000000000000000000000000000011)
- edegeInhib[3] = 12832
-nodeInhib[3] = 17417
+ edegeInhib[3] = 12896
+nodeInhib[3] = 1089
 
-State 644 file 1.c line 396 function main thread 0
+State 632 file 1.c line 396 function main thread 0
 ----------------------------------------------------
   i=4 (00000000000000000000000000000100)
 
-State 647 file 1.c line 402 function main thread 0
+State 635 file 1.c line 402 function main thread 0
 ----------------------------------------------------
   i=0 (00000000000000000000000000000000)
 
-State 649 file 1.c line 403 function main thread 0
+State 637 file 1.c line 403 function main thread 0
 ----------------------------------------------------
   j=0 (00000000000000000000000000000000)
 Graph[0][0] = 0
 
-State 652 file 1.c line 403 function main thread 0
+State 640 file 1.c line 403 function main thread 0
 ----------------------------------------------------
   j=1 (00000000000000000000000000000001)
 Graph[0][1] = 1
 
-State 656 file 1.c line 403 function main thread 0
+State 644 file 1.c line 403 function main thread 0
 ----------------------------------------------------
   j=2 (00000000000000000000000000000010)
 
-State 659 file 1.c line 402 function main thread 0
+State 647 file 1.c line 402 function main thread 0
 ----------------------------------------------------
   i=1 (00000000000000000000000000000001)
 
-State 662 file 1.c line 403 function main thread 0
+State 650 file 1.c line 403 function main thread 0
 ----------------------------------------------------
   j=0 (00000000000000000000000000000000)
 Graph[1][0] = 1
 
-State 665 file 1.c line 403 function main thread 0
+State 653 file 1.c line 403 function main thread 0
 ----------------------------------------------------
   j=1 (00000000000000000000000000000001)
 Graph[1][1] = 0
 
-State 669 file 1.c line 403 function main thread 0
+State 657 file 1.c line 403 function main thread 0
 ----------------------------------------------------
   j=2 (00000000000000000000000000000010)
 
-State 672 file 1.c line 402 function main thread 0
+State 660 file 1.c line 402 function main thread 0
 ----------------------------------------------------
   i=2 (00000000000000000000000000000010)
 

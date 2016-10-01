@@ -6,7 +6,7 @@
 #define snareLength 2
 #define dLen 4  // 2 * M  
 #define bigLen 16 // 2 ^ (2*M) 
-#define len 2
+#define len 3
 
 
 _Bool nondet_bool();
@@ -273,6 +273,7 @@ int  main()
     }   
 
 
+
     for  (i = 0; i < len; i++) {
         edgeBag[i].combinedMask = 0b0; 
         edgeBag[i].combinedMask2 = 0b0; 
@@ -293,44 +294,45 @@ int  main()
         for  (j = 0; j < snareLength; j++) {   
            f = qrfusionMatrix[j];
            h = rqfusionMatrix[j];   
-           vf = edegeInhib[j + M];
+           vf = edegeInhib[j + M]; // EdgeInhibition of jth Qsnare
            bv = ((v << M) | t);
            bvv = ((Vnodes[valj] << M) | Tnodes[valj]);
 
-           if ( (v & (1 << j)) && ((vf & (b1 << bv)) == b0) ) {    
-              edgeBag[i].combinedMask = edgeBag[i].combinedMask | f;
-              edgeBag[i].count = edgeBag[i].count + 1;    
-         
+           if ( (v & (1 << j))) {    
+            if ((vf & (b1 << bv)) == b0) {
+			  edgeBag[i].combinedMask = edgeBag[i].combinedMask | f;
+              edgeBag[i].count = edgeBag[i].count + 1; 
               placeHolder = (Tnodes[valj] & f);
 	          for ( l = 0; l < snareLength; l++) {
 	              if  ( placeHolder & (1 << l)) { 
-		               vff  =  nodeInhib[l];   
+		               vff  =  nodeInhib[l];  // Node Inhibition of lth Rsnare   
                        if ((vff  & (b1 << bvv)) != b0) {
                             Ck = 1; 
                        }
                   }
               }
 	        }
-
+          }
 
          // R SNARE TIME : 
 
-         vf = edegeInhib[j];
-         if ( (t & (1 << j)) && ((vf & (b1 << bv)) != b0) ) {        
-             edgeBag[i].combinedMask2 = edgeBag[i].combinedMask2 | h;
-             edgeBag[i].count2 = edgeBag[i].count2 + 1;    
-             placeHolder = (Tnodes[valj] & h);
-	         for ( l = 0; l < snareLength; l++) {
-	             if  ( placeHolder & (1 << l)) { 
-		              vff  =  nodeInhib[l];   
-                      if ((vff  & (b1 << bvv)) != b0) {
+         vf = edegeInhib[j];  // Edge inhibition of jth RSnare
+         if ( (t & (1 << j)) ) {        
+             if ((vf & (b1 << bv)) == b0) {
+				edgeBag[i].combinedMask2 = edgeBag[i].combinedMask2 | h;
+                edgeBag[i].count2 = edgeBag[i].count2 + 1;    
+                placeHolder = (Vnodes[valj] & h);
+	            for ( l = 0; l < snareLength; l++) {
+	                if  ( placeHolder & (1 << l)) { 
+		               vff  =  nodeInhib[l + M];    // Node Inhibition of lth Qsnare
+                       if ((vff  & (b1 << bvv)) != b0) {
                            Cl = 1; 
                       }
                  }
              }
 	     }
     }
-        
+}    
          if(Ck == 1 || Cl == 1) {
              C2 = C2 && 1;
          }

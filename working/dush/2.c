@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 
-#define M 4         
-#define N 2
-#define snareLength 4
-#define dLen 8  // 2 * M  
-#define bigLen 256 // 2 ^ (2*M) 
-#define len 2
+#define M 3         
+#define N 3
+#define snareLength 3
+#define dLen 6  // 2 * M  
+#define bigLen 64 // 2 ^ (2*M) 
+#define len 6
 
 
 _Bool nondet_bool();
@@ -273,14 +273,6 @@ int  main()
     }   
 
 
-   for  (i = 0; i < snareLength ; i++ ) {
-      edegeInhib[snareLength]  = nondetBV();
-   }
-
-   for (i= 0; i < snareLength ; i++ ) {
-      nodeInhib[snareLength] = nondetBV();	
-   }
-
     C2 = 1;
     C3 = 1;
 
@@ -296,41 +288,39 @@ int  main()
         
         v = edgeBag[i].vSnare;
         t = edgeBag[i].tSnare;
+        bv = ((v << M) | t);  // Represent edge as a Dlen Vector VSnare ^ TSnare
         
         valj = edgeBag[i].jth;
         vali = edgeBag[i].ith;
         
         for  (j = 0; j < snareLength; j++) {   
            f = qrfusionMatrix[j];
-           h = rqfusionMatrix[j];   
-                       
-           bv = ((v << M) | t);
-           bvv = ((Vnodes[valj] << M) | Tnodes[valj]);
-
+           h = rqfusionMatrix[j];                          
+                    
           // GSNARE TIME :	
-           vf = edegeInhib[j + M];
+           vf = edegeInhib[j + M]; // EdgeInhibition of jth Qsnare
            if ( (v & (1 << j))) {                 	 
-               edgeBag[i].combinedMask = edgeBag[i].combinedMask | f;  
-               edgeBag[i].count = edgeBag[i].count + 1;
-               if ((vf & (b1 << bv)) != b0) { 
-               if (Tnodes[valj] & f) {
-                      Ck = 1; 
-               }
+		//	   bvv = ((Vnodes[valj] << M) | Tnodes[valj]); // jth node Representation VSnare ^ TSnare      
+               if ((vf & (b1 << bv)) == b0) { 
+				  edgeBag[i].combinedMask = edgeBag[i].combinedMask | f;  
+                  edgeBag[i].count = edgeBag[i].count + 1;
+                  if (Tnodes[valj] & f) {
+                       Ck = 1; 
+                  }
+              }
            }
-         }
+         
          // R SNARE TIME : 
            vf = edegeInhib[j];
-           if ( (t & (1 << j))) {     
-                edgeBag[i].combinedMask2 = edgeBag[i].combinedMask2 | h;
-		        edgeBag[i].count2 = edgeBag[i].count2 + 1;
-                bvv = ((Vnodes[valj] << M) | Tnodes[valj]);
-                if ((vf & (b1 << bv)) != b0) { 
-                
-                if (Tnodes[valj] & h) {
+           if ( (t & (1 << j))) {       
+                if ((vf & (b1 << bv)) == b0) { 
+				   edgeBag[i].combinedMask2 = edgeBag[i].combinedMask2 | h;
+		           edgeBag[i].count2 = edgeBag[i].count2 + 1;
+                   if (Vnodes[valj] & h) {
 		              Cl = 1;
-               }
-	       }
-	    } 
+                   }
+	            }
+	       } 
 }
         if(Ck == 1 || Cl == 1) {
              C2 = C2 && 1;
@@ -341,7 +331,7 @@ int  main()
    
          for (k = 0; k < N; k++) {
 	         if( k != edgeBag[i].jth) {               
-	            if ((edgeBag[i].combinedMask & Tnodes[k] )  || (edgeBag[i].combinedMask2 & Vnodes[k] )) {
+	            if ((edgeBag[i].combinedMask & Tnodes[k])  || (edgeBag[i].combinedMask2 & Vnodes[k])) {
 			        C3 = 0;                    
                }
             }
@@ -357,7 +347,6 @@ int  main()
 
     printf("\nThe value of : \n C0 = %d \n C1 : %d \n C2 : %d , C3 : %d \n,C4 : %d , C5 : %d",C0,C1,C2,C3,C4,C5);
     printf(" the value of mr.Ticks is %d and len was %d ", ticks , len);
-    
   __CPROVER_assert(! ( C0 && C1 && C2 && C3) , "Graph that satisfy friendZoned model exists");  
  
 }
